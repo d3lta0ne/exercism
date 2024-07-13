@@ -1,14 +1,29 @@
 #include "difference_of_squares.h"
 
-int sum_of_n_numbers(int n){
-    return n  * (n+1)/2;
+int sum_of_n_numbers(int n) {
+    int sum = 0;
+    for(int i = 1; i <= n; i++) {
+        sum += i;
+    }
+    return sum;
 }
 
-int square_of_sums(int i){
-    return i*i;
+unsigned int square_of_n(unsigned int number) {
+    return number * number;
 }
 
-int sum_of_squares(int n) {
-    return n * (n + 1) * (2 * n + 1) / 6;
+unsigned int difference_of_squares(unsigned int number) {
+    return square_of_sum(number) - sum_of_squares(number);
 }
 
+unsigned int square_of_sum(unsigned int number) {
+    return square_of_n(sum_of_n_numbers(number)); 
+}
+
+unsigned int sum_of_squares(unsigned int number) {
+    unsigned int sum = 0;
+    for(unsigned int i = 1; i <= number; i++) {
+        sum += square_of_n(i);
+    }
+    return sum;
+}
