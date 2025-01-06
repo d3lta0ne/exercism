@@ -22,3 +22,11 @@
 #   main "$@"
 #
 # *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $0 <person>"
+  exit 1
+else
+  echo "Hello, $1"
+  exit 0
+fi
