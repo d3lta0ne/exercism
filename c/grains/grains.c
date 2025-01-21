@@ -1,10 +1,12 @@
 #include "grains.h"
 
-uint64_t square(uint8_t index){
-    // this can be solved best by finding the geometric sequence for this problem.
-
+uint64_t square(uint8_t index)
+{
+    return (index > 0 && index < 65) ? 1ul << (index - 1) : 0;
 }
 
-uint64_t total(void){
-
+uint64_t total(void)
+{
+    return UINT64_MAX; // This is a great optimization.
+    // return ((((uint64_t)1 << 63) - 1) << 1) + 1;
 }
